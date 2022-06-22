@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import HowPhone from '../layout/howPhone.png';
-import HowCircle from '../layout/HowCircle.png';
+import HowPhone from '../../public/Phone/howPhone.png';
+import HowCircle from '../../public/Phone/howCircle.png';
 
 const HowComp = ({ how }) => {
   return (

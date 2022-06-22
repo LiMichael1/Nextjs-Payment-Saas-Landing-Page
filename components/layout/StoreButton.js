@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import googlePlay from './google-play-icon.svg';
-import apple from './Apple-Icon.svg';
+import googlePlay from '../../public/google-play-icon.svg';
+import apple from '../../public/Apple-Icon.svg';
 
 const StoreButton = ({ store }) => {
   const isPlay = store === 'Play' ? true : false;

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import AboutPhone from '../layout/aboutPhone.png';
+import AboutPhone from '../../public/Phone/aboutPhone.png';
 
 const AboutComp = ({ data: { activeUsers, downloaded, reviews, awards } }) => {
   return (

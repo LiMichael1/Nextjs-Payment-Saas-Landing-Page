@@ -26,6 +26,10 @@ ul {
   list-style: none;
 }
 
+.bodyContainer {
+  min-height: 55vh;
+}
+
 .logo {
   font-family: DB Sans MS;
 }
@@ -141,7 +145,7 @@ ul {
   background-color: #aec2ba;
   display: flex;
   align-items: flex-end;
-  background-image: url('../components/layout/homeBackground.png');
+  background-image: url('/homeBackground.png');
 }
 
 .topFeature {

@@ -1,23 +1,10 @@
 import { useState, useEffect } from 'react';
 
 import Image from 'next/image';
-import featurePhone from '../layout/featurePhone.png';
-import featurePhoneBg from '../layout/featurePhoneBackground.png';
+import featurePhone from '../../public/Phone/featurePhone.png';
+import featurePhoneBg from '../../public/Phone/featurePhoneBackground.png';
 
-const FeatureComp = () => {
-  const [features, setFeatures] = useState([]);
-
-  useEffect(() => {
-    const fetchAPI = async () => {
-      const res = await fetch('http://localhost:3000/api/firstTaskData');
-      const data = await res.json();
-
-      setFeatures(data.features);
-    };
-
-    fetchAPI();
-  }, []);
-
+const FeatureComp = ({ features }) => {
   const featureBlock = (feature) => {
     return feature ? (
       <div className='mb-50'>

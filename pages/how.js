@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import NavBar from '../components/layout/NavBar';
-import Footer from '../components/layout/Footer';
 import HowComp from './../components/pages/HowComp';
 
 const How = () => {
@@ -19,11 +17,9 @@ const How = () => {
   }, []);
 
   return (
-    <div>
-      <NavBar />
+    <>
       <HowComp how={howData} />
-      <Footer />
-    </div>
+    </>
   );
 };
 

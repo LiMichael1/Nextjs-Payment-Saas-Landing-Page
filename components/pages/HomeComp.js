@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import StoreButton from '../layout/StoreButton';
-import Phone from '../layout/homePhone.png';
+import Phone from '../../public/Phone/homePhone.png';
 
 const HomeComp = ({ data: { activeUsers, downloaded, reviews } }) => {
   return (

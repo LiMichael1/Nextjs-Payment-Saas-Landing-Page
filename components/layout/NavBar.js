@@ -1,8 +1,11 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { signIn, signOut, useSession } from 'next-auth/react';
+
 import Logo from './Logo';
 
 const NavBar = () => {
+  const { data: session, status } = useSession();
+
   return (
     <nav className='navbar'>
       <div className='leftNav'>
@@ -31,7 +34,44 @@ const NavBar = () => {
         </ul>
       </div>
       <div className='rightNav'>
-        <button>Download</button>
+        {/* No One is Logged In Yet */}
+        {status !== 'loading' && !session && (
+          <li className='lightText'>
+            <Link href='/signIn'>
+              <a>Sign In</a>
+            </Link>
+          </li>
+        )}
+
+        {/* User is Already Logged In */}
+        {session && (
+          <ul className='navLinks lightText'>
+            <li>
+              <Link href='/download' className='mr-10'>
+                <a>Download</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href='/download-ssr'>
+                <a>Download SSR</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href='/api/auth/signout'>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    signOut();
+                  }}
+                >
+                  SignOut
+                </a>
+              </Link>
+            </li>
+          </ul>
+        )}
       </div>
     </nav>
   );
